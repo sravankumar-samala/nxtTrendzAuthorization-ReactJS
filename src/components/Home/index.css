@@ -1,0 +1,52 @@
+/* Write your CSS code here */
+.home-page-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  place-content: center;
+  gap: 1rem;
+  padding: clamp(0.7em, 10vw, 3em);
+  background-color: #e6f6ff;
+}
+.home-first-container {
+  max-width: 95%;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+}
+.home-first-container h1 {
+  color: #1e293b;
+}
+.home-first-container p {
+  color: #0967d2;
+}
+.home-btn {
+  width: fit-content;
+  margin-block: 1em;
+}
+.home-second-container {
+  display: grid;
+  place-content: center;
+}
+.home-first-container img {
+  display: none;
+}
+.home-second-container img {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .home-page-container {
+    grid-template-columns: 1fr;
+  }
+  .home-first-container {
+    place-items: center;
+    text-align: center;
+  }
+  .home-second-container img {
+    display: none;
+  }
+  .home-first-container img {
+    display: block;
+    max-width: 70%;
+  }
+}

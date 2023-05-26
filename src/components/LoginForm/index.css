@@ -1,0 +1,81 @@
+/* Write your CSS code here */
+.login-form-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  align-items: center;
+  padding: 1em;
+}
+.form-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.home-png {
+  max-width: 100%;
+}
+.home-logo-image {
+  display: none;
+}
+.form-container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+}
+.form-logo-image {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.input-container {
+  justify-self: start;
+}
+.input-container label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #475569;
+}
+.input-container input {
+  color: #475569;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 1.1rem;
+  background-color: #cbd2db;
+}
+.error-msg {
+  color: rgb(255, 83, 83);
+}
+
+@media (max-width: 768px) {
+  .login-form-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+  .form-logo-image {
+    display: none;
+  }
+  .home-png {
+    max-width: min(600px, 80%);
+  }
+  .home-logo-image {
+    display: block;
+    max-width: min(500px, 60%);
+  }
+  .form-container {
+    width: 70%;
+  }
+  .login-btn {
+    width: fit-content;
+    margin-left: auto;
+  }
+}

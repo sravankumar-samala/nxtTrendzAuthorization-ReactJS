@@ -1,0 +1,71 @@
+/* Write your CSS code here */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em min(10vw, 2.7rem);
+}
+
+.app-logo-container {
+  width: max(100px, 15%);
+}
+.app-logo {
+  max-width: 100%;
+}
+.nav-logout {
+  display: none;
+}
+.navigation-list {
+  display: flex;
+  gap: clamp(0.7em, 5vw, 2em);
+  align-items: center;
+}
+.nav-items {
+  display: none;
+}
+.link-route {
+  color: #475569;
+  font-weight: 500;
+  font-size: 1.05em;
+}
+.navigation-list button {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    gap: 1em;
+    position: relative;
+  }
+  .navigation-list {
+    display: none;
+  }
+  .nav-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-items img {
+    width: 25px;
+    height: 25px;
+  }
+  .app-logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .app-logo {
+    max-width: max(100px, 20%);
+  }
+  .navigation-list button {
+    display: none;
+  }
+  .nav-logout {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+}
