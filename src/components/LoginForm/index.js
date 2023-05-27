@@ -1,7 +1,7 @@
 // Write your JS code here
 import {Component} from 'react'
-import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+// import Cookies from 'js-cookie'
+// import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
@@ -50,15 +50,15 @@ export default class LoginForm extends Component {
     )
   }
 
-  submitSuccess = jwtToken => {
-    Cookies.set('jwt_token', jwtToken, {expires: 30})
-    this.setState({showSubmitFailed: false})
+  submitSuccess = () => {
+    // Cookies.set('jwt_token', jwtToken, {expires: 30})
     const {history} = this.props
+    this.setState({showSubmitFailed: false})
     history.replace('/')
   }
 
   submitFailed = errorMsg => {
-    console.log(errorMsg)
+    // console.log(errorMsg)
     this.setState({
       showSubmitFailed: true,
       errMsg: errorMsg,
@@ -69,7 +69,7 @@ export default class LoginForm extends Component {
     event.preventDefault()
 
     const {userName, password} = this.state
-    const userDetails = {userName, password}
+    const userDetails = {username: userName, password}
     const url = 'https://apis.ccbp.in/login'
     const options = {
       method: 'POST',
@@ -82,16 +82,15 @@ export default class LoginForm extends Component {
     console.log(response)
     if (response.ok === true) {
       this.submitSuccess(data.jwt_token)
-      //   this.submitSuccess()
     } else this.submitFailed(data.error_msg)
   }
 
   render() {
     const {errMsg, showSubmitFailed} = this.state
-    const jwtToken = Cookies.get('jwt_token')
-    if (jwtToken !== undefined) {
-      return <Redirect to="/" />
-    }
+    // const jwtToken = Cookies.get('jwt_token')
+    // if (jwtToken !== undefined) {
+    //   return <Redirect to="/" />
+    // }
 
     return (
       <div className="login-form-page">
