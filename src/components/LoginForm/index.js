@@ -3,7 +3,7 @@ import {Component} from 'react'
 import './index.css'
 
 export default class LoginForm extends Component {
-  state = {userName: '', password: '', errMsg: ''}
+  state = {userName: '', password: '', showSubmitFailed: false, errMsg: ''}
 
   renderUserNameField = () => {
     const {userName} = this.state
@@ -52,6 +52,13 @@ export default class LoginForm extends Component {
     history.replace('/')
   }
 
+  submitFailed = errorMsg => {
+    this.setState({
+      showSubmitFailed: true,
+      errMsg: errorMsg,
+    })
+  }
+
   submitForm = async event => {
     event.preventDefault()
 
@@ -67,16 +74,13 @@ export default class LoginForm extends Component {
     const data = await response.json()
 
     console.log(data)
-    // if (response.ok) {
-    //   this.submitSuccess()
-    // } else {
-    //   const errorMessage = response.error
-    //   this.setState({errMsg: errorMessage})
-    // }
+    if (response.ok) {
+      this.submitSuccess()
+    } else this.submitFailed(data.error_msg)
   }
 
   render() {
-    const {errMsg} = this.state
+    const {errMsg, showSubmitFailed} = this.state
     return (
       <div className="login-form-page">
         <div className="form-image-container">
@@ -102,7 +106,7 @@ export default class LoginForm extends Component {
           <button type="submit" className="login-btn">
             Login
           </button>
-          <p className="error-msg">{errMsg}</p>
+          {showSubmitFailed && <p className="error-msg">*{errMsg}</p>}
         </form>
       </div>
     )

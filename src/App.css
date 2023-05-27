@@ -25,6 +25,7 @@ button {
   font-weight: bold;
   border-radius: 5px;
   font-size: 1.1rem;
+  box-shadow: 2px 2px 10px 0px rgb(82, 82, 82);
 }
 .main-container {
   display: flex;

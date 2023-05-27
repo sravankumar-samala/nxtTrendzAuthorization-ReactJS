@@ -18,6 +18,7 @@ const Header = () => (
         />
       </Link>
     </div>
+
     <ul className="navigation-list">
       <Link to="/" className="link-route">
         <li className="link-item">Home</li>
@@ -32,6 +33,7 @@ const Header = () => (
         <button type="button">Logout</button>
       </Link>
     </ul>
+
     <div className="nav-items">
       <Link to="/" className="link-route">
         <img

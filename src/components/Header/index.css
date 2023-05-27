@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em min(10vw, 2.7rem);
+  padding: 0 min(10vw, 2.7rem);
 }
 
 .app-logo-container {
@@ -19,6 +19,7 @@
   display: flex;
   gap: clamp(0.7em, 5vw, 2em);
   align-items: center;
+  margin-block: 13px;
 }
 .nav-items {
   display: none;
@@ -46,6 +47,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-block: 10px;
   }
   .nav-items img {
     width: 25px;
@@ -56,6 +58,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-block-start: 15px;
   }
   .app-logo {
     max-width: max(100px, 20%);

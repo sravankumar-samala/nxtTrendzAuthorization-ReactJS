@@ -18,7 +18,7 @@
   color: #1e293b;
 }
 .home-first-container p {
-  color: #0967d2;
+  color: #00397a;
 }
 .home-btn {
   width: fit-content;
@@ -39,7 +39,7 @@
     grid-template-columns: 1fr;
   }
   .home-first-container {
-    place-items: center;
+    display: block;
     text-align: center;
   }
   .home-second-container img {
@@ -48,5 +48,8 @@
   .home-first-container img {
     display: block;
     max-width: 70%;
+    margin: 2em auto;
+    box-shadow: 5px 5px 10px 0px rgb(146, 146, 146);
+    border-radius: 5px;
   }
 }

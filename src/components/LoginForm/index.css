@@ -54,6 +54,7 @@
 }
 .error-msg {
   color: rgb(255, 83, 83);
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
